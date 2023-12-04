@@ -18,11 +18,11 @@ module.exports = {
         switch (subcommand) {
             case 'apod':
                 try {
-                    const fetchedData = await request(`https://api.nasa.gov/planetary/apod?api_key=${nasaApiKey}`);
+                    const fetchedData = await request(`https://api.nasa.gov/planetary/apod?thumbs=true&api_key=${nasaApiKey}`);
               
                     const apod = await fetchedData.body.json();
               
-                    await interaction.editReply({content: `## ${apod.title}\n${apod.explanation}\n\n**Link:** <${apod.url}>`, files: [apod.url]});
+                    await interaction.editReply({content: `## ${apod.title}\n${apod.explanation}\n\n**Link:** <${apod.url}>`, files: [apod.thumbnail_url ?? apod.url]});
                 } catch (error) {
                     await interaction.editReply(`An error occurred while fetching APOD.`);
                     console.error(`New error report! Occured on ${new Date().toUTCString()} while executing '/${interaction.commandName}'`);
