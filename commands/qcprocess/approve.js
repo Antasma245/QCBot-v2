@@ -38,7 +38,7 @@ module.exports = {
         const tag = await SubmissionsTable.findOne({ where: { dbSubmissionId: inputSubmissionId } });
 
         if (!tag) {
-            return await interaction.reply({content:`No submission found with ID: ${inputsubid}. Please check if your submission ID is correct.`, ephemeral: true });
+            return await interaction.reply({content:`No submission found with ID: ${inputSubmissionId}. Please check if your submission ID is correct.`, ephemeral: true });
         }
     
         const userId = tag.get('dbUserId');
