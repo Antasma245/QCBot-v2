@@ -63,7 +63,7 @@ module.exports = {
 
                     if (approvalLogsId) {
                         const approvalLogsThread = await interaction.guild.channels.fetch(approvalLogsId);
-                        await approvalLogsThread.send({ content: `<@mention>`, embeds: [new EmbedBuilder().setColor(`e74c3c`).setTitle('Model Maker role given').setDescription(`<@${interaction.user.id}> has manually given the Model Maker role to <@${member.id}>.\n**Reason:** ${reason}`)] });
+                        await approvalLogsThread.send({ embeds: [new EmbedBuilder().setColor(`e74c3c`).setTitle('Model Maker role given').setDescription(`<@${interaction.user.id}> has manually given the Model Maker role to <@${member.id}>.\n**Reason:** ${reason}`)] });
                     }
                 } catch (error) {
                     await interaction.reply({content: `Something went wrong... Please try again and see if it works. If the error still persists, consider pinging <@${myUserId}>.`, ephemeral: true});
@@ -82,7 +82,7 @@ module.exports = {
 
                     if (approvalLogsId) {
                         const approvalLogsThread = await interaction.guild.channels.fetch(approvalLogsId);
-                        await approvalLogsThread.send({ content: `<@mention>`, embeds: [new EmbedBuilder().setColor(`e74c3c`).setTitle('Model Maker role removed').setDescription(`<@${interaction.user.id}> has manually removed the Model Maker role from <@${member.id}>.\n**Reason:** ${reason}`)] });
+                        await approvalLogsThread.send({ embeds: [new EmbedBuilder().setColor(`e74c3c`).setTitle('Model Maker role removed').setDescription(`<@${interaction.user.id}> has manually removed the Model Maker role from <@${member.id}>.\n**Reason:** ${reason}`)] });
                     }
                 } catch (error) {
                     await interaction.reply({content: `Something went wrong... Please try again and see if it works. If the error still persists, consider pinging <@${myUserId}>.`, ephemeral: true});
