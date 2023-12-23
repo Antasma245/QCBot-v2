@@ -106,14 +106,14 @@ module.exports = {
 
         if (link.includes('https://huggingface.co/')) {
             if (link.includes('/blob/')) {
-                return await interaction.reply({content:`Invalid Huggingface link. Please make sure to get the "resolve" link and not the "blob" one. Follow this tutorial to make sure you get the correct Huggingface link: <https://rentry.org/fdg_guide_new>.`, ephemeral: true });
+                return await interaction.reply({content:`Invalid Huggingface link. Please make sure to get the "resolve" link and not the "blob" one. Follow this tutorial to make sure you get the correct Huggingface link: <https://rentry.org/fdg_guide_newer>.`, ephemeral: true });
             } else if (!link.includes('/resolve/')) {
-                return await interaction.reply({content:`Invalid Huggingface link. Your link must be a "resolve" one. Follow this tutorial to make sure you get the correct Huggingface link: <https://rentry.org/fdg_guide_new>.`, ephemeral: true });
+                return await interaction.reply({content:`Invalid Huggingface link. Your link must be a "resolve" one. Follow this tutorial to make sure you get the correct Huggingface link: <https://rentry.org/fdg_guide_newer>.`, ephemeral: true });
             }
         } else if (link.includes('https://drive.google.com/') || link.includes('https://mega.nz/')) {
-            return await interaction.reply({content:`Looks like you entered a Google Drive / Mega link. Please note that all models are required to have a Huggingface link. Follow this tutorial to make sure you get the correct Huggingface link: <https://rentry.org/fdg_guide_new>.`, ephemeral: true });
+            return await interaction.reply({content:`Looks like you entered a Google Drive / Mega link. Please note that all models are required to have a Huggingface link. Follow this tutorial to make sure you get the correct Huggingface link: <https://rentry.org/fdg_guide_newer>.`, ephemeral: true });
         } else {
-            return await interaction.reply({content:`Invalid link. Please note that all models are required to have a Huggingface link. Follow this tutorial to make sure you get the correct Huggingface link: <https://rentry.org/fdg_guide_new>.\nPlease note that we do not accept Kits.ai models anymore.`, ephemeral: true });
+            return await interaction.reply({content:`Invalid link. Please note that all models are required to have a Huggingface link. Follow this tutorial to make sure you get the correct Huggingface link: <https://rentry.org/fdg_guide_newer>.\nPlease note that we do not accept Kits.ai models anymore.`, ephemeral: true });
         }
 
         const imageType = image.contentType.toLowerCase();
