@@ -116,6 +116,10 @@ module.exports = {
             return await interaction.reply({content:`Invalid link. Please note that all models are required to have a Huggingface link. Follow this tutorial to make sure you get the correct Huggingface link: <https://rentry.org/fdg_guide_newer>.\nPlease note that we do not accept Kits.ai models anymore.`, ephemeral: true });
         }
 
+        if (extraction=='pm' || extraction=='harvest' || extraction=='dio') {
+            return await interaction.reply({content:`Sorry, outdated extraction algorithms such as *${extraction}* aren't accepted anymore.\nYou may retrain the model with a more recent one (e.g. rmvpe or crepe) and reapply.`, ephemeral: true });
+        }
+
         const imageType = image.contentType.toLowerCase();
         const demoType = demo.contentType.toLowerCase();
         const imageSize = image.size
